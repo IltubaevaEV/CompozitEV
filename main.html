@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<style>
+ form {
+    margin: auto;
+    width: 35%;
+
+ }   
+ .result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+ }
+</style>
+
+<head>
+    <title>
+        Прогнозирование композитов
+    </title>
+</head>
+
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend>
+            Введите значения
+        </legend>
+        Модуль упругости при растяжении. ГПа
+        <input name = 'a1' type="number"
+        required>
+        <br>
+        Прочность при растяжении. мПа
+        <input name = 'a12' type="number"
+        required>
+        <br>
+        Плотность. кг/м3
+        <input name = 'a2' type="number"
+        required>
+        <br>  
+        модуль упругости. ГПа
+        <input name = 'a3' type="number"
+        required>
+        <br>
+        Количество отвердителя. м.%
+        <input name = 'a4' type="number"
+        required>
+        <br>
+        Содержание эпоксидных групп.%_2
+        <input name = 'a5' type="number"
+        required>
+        <br>
+        Температура вспышки. С_2
+        <input name = 'a6' type="number"
+        required>
+        <br>
+        Поверхностная плотность. г/м2
+        <input name = 'a7' type="number"
+        required>
+        <br>
+        Потребление смолы. г/м2
+        <input name = 'a8' type="number"
+        required>
+        <br>
+        Шаг нашивки
+        <input name = 'a10' type="number"
+        required>
+        <br>
+        Плотность нашивки
+        <input name = 'a11' type="number"
+        required>
+        <br>
+        Угол нашивки
+        <input name = 'a9' type="number"
+        required>
+        <br>
+        <br>
+        <input type = "submit"
+    </fieldset>
+
+</form>
+
+<div class="result" align = "center">
+    {% if result %}
+    <br>
+    <p style="font-size:50px">
+        Прогноз матрицы-наполнитель
+    </p>
+    <p style="font-size:50px">{{result}}</p> 
+    {% endif %}
+</div>
